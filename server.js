@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs= require('fs');
-var port = process.env.PORT || 3000 ;
+var port = process.set.PORT || 3000 ;
 var app = express();
 
 app.set('view engine','hbs');
@@ -36,20 +36,20 @@ hbs.registerHelper('ScreamIt',(text)=>{
 hbs.registerPartials(__dirname + '/Views/partials');
 app.get('/',(req,res)=>{
   // res.send('Hello World!');
-  res.render('Home.hbs',{
+  res.render('about.hbs',{
     HomePage:'Welcome to my website'
   });
 });
 
-app.get('/about',(req,res)=>{
-  // res.send({
-  //   Name:'Abhinav Dixit',
-  //   Like:'Biking'
-  // });
-  res.render('about.hbs',{
-    TitlePage: 'About Page'
-  });
-});
+// app.get('/about',(req,res)=>{
+//   // res.send({
+//   //   Name:'Abhinav Dixit',
+//   //   Like:'Biking'
+//   // });
+//   res.render('about.hbs',{
+//     TitlePage: 'About Page'
+//   });
+// });
 
 app.get('/bad',(req,res)=>{
   res.send({
