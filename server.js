@@ -37,7 +37,7 @@ hbs.registerHelper('ScreamIt',(text)=>{
 hbs.registerPartials(__dirname + '/Views/partials');
 app.get('/',(req,res)=>{
   // res.send('Hello World!');
-  res.render('/Views/about.hbs',{
+  res.render('./Views/about.hbs',{
     HomePage:'Welcome to my website'
   });
 });
