@@ -35,6 +35,7 @@ hbs.registerHelper('ScreamIt',(text)=>{
 });
 
 hbs.registerPartials(__dirname + '/Views/partials');
+hbs.register(__dirname + '/Views')
 
 app.get('/', (req, res) => {
   res.render('home.hbs', {
