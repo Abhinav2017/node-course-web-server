@@ -35,7 +35,12 @@ hbs.registerHelper('ScreamIt',(text)=>{
 });
 
 hbs.registerPartials(__dirname + '/Views/partials');
-
+app.get('/about',(req,res)=>{
+  // res.send('Hello World!');
+  res.render('about.hbs',{
+    HomePage:'Welcome to my website'
+  });
+});
 
 app.get('/', (req, res) => {
   res.render('home.hbs', {
@@ -43,12 +48,7 @@ app.get('/', (req, res) => {
     welcomeMessage: 'Welcome to my website'
   });
 });
-app.get('/about',(req,res)=>{
-  // res.send('Hello World!');
-  res.render('about.hbs',{
-    HomePage:'Welcome to my website'
-  });
-});
+
 
 // app.get('/about',(req,res)=>{
 //   // res.send({
