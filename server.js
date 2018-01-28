@@ -35,6 +35,13 @@ hbs.registerHelper('ScreamIt',(text)=>{
 });
 
 hbs.registerPartials(__dirname + '/Views/partials');
+
+app.get('/', (req, res) => {
+  res.render('home.hbs', {
+    pageTitle: 'Home Page',
+    welcomeMessage: 'Welcome to my website'
+  });
+});
 app.get('/about',(req,res)=>{
   // res.send('Hello World!');
   res.render('about.hbs',{
