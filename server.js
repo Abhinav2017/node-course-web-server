@@ -5,7 +5,7 @@ var port = process.env.PORT || 3000 ;
 var app = express();
 
 app.set('view engine','.hbs');
-app.set('Views', path.join(__dirname, 'Views'));
+app.set('Views', __dirname + '/Views');
 app.use(express.static(__dirname + '/Public'));
 
 app.use((req,res,next)=>{
@@ -37,7 +37,7 @@ hbs.registerHelper('ScreamIt',(text)=>{
 hbs.registerPartials(__dirname + '/Views/partials');
 app.get('/',(req,res)=>{
   // res.send('Hello World!');
-  res.render('about.hbs',{
+  res.render('/Views/about.hbs',{
     HomePage:'Welcome to my website'
   });
 });
