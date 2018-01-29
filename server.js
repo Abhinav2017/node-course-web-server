@@ -4,9 +4,9 @@ const fs= require('fs');
 var path =require('path');
 var port = process.env.PORT || 3000 ;
 var app = express();
-
+app.set('views', './views');
 app.set('view engine','hbs');
-app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static(__dirname + '/Public'));
 
 app.use((req,res,next)=>{
