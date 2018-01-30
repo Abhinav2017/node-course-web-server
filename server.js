@@ -27,21 +27,15 @@ app.use((req,res,next)=>{
 //   res.render('maintenance.hbs');
 // });
 
-hbs.registerHelper('GetCurrentTime',()=>{
+hbs.registerHelper('getCurrentTime',()=>{
   return new Date().getFullYear()
 });
 
-hbs.registerHelper('ScreamIt',(text)=>{
+hbs.registerHelper('screamIt',(text)=>{
   return text.toUpperCase()
 });
 
 hbs.registerPartials(__dirname + '/views/partials');
-app.get('/about',(req,res)=>{
-  // res.send('Hello World!');
-  res.render('about.hbs',{
-    HomePage:'Welcome to my website'
-  });
-});
 
 app.get('/', (req, res) => {
   res.render('home.hbs', {
@@ -49,6 +43,15 @@ app.get('/', (req, res) => {
     welcomeMessage: 'Welcome to my website'
   });
 });
+
+app.get('/about',(req,res)=>{
+  // res.send('Hello World!');
+  res.render('about.hbs',{
+    pageTitle:'About page'
+  });
+});
+
+
 
 
 // app.get('/about',(req,res)=>{
