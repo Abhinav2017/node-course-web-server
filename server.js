@@ -4,10 +4,10 @@ const fs= require('fs');
 var path =require('path');
 var port = process.env.PORT || 3000 ;
 var app = express();
-app.set('views', './views');
+
 app.set('view engine','hbs');
 
-app.use(express.static(__dirname + '/Public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use((req,res,next)=>{
 
@@ -35,7 +35,7 @@ hbs.registerHelper('ScreamIt',(text)=>{
   return text.toUpperCase()
 });
 
-hbs.registerPartials(__dirname + '/Views/partials');
+hbs.registerPartials(__dirname + '/views/partials');
 app.get('/about',(req,res)=>{
   // res.send('Hello World!');
   res.render('about.hbs',{
